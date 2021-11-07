@@ -14,14 +14,14 @@ type User struct {
 y retorna un dato de tipo string que contiene el nombre y el apellido del
 usuario
 */
-func (usuario User) nombre_completo() string {
+func (usuario User) nombreCompleto() string {
 	return usuario.nombre + " " + usuario.apellido
 }
 
 /* Cuando se crea un metodo para modificar la estructura, esta crea una copia
 si no lleva el apuntador (*)
 */
-func (usuario *User) set_nombre(nombre string) {
+func (usuario *User) setNombre(nombre string) {
 	usuario.nombre = nombre
 }
 
@@ -29,6 +29,6 @@ func main() {
 	var salvador User
 	salvador.nombre = "Salvador"
 	salvador.apellido = "Bermudez"
-	salvador.set_nombre("Salvador Miguel")
-	fmt.Println(salvador.nombre_completo())
+	salvador.setNombre("Salvador Miguel")
+	fmt.Println(salvador.nombreCompleto())
 }

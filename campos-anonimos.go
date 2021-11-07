@@ -5,8 +5,8 @@ import "fmt"
 //Definimos dos estructuras
 
 type Transporte struct {
-	capacidad_pasajeros int
-	ruedas              bool
+	capacidadPasajeros int
+	ruedas             bool
 }
 
 type Terrestre struct {
@@ -15,9 +15,9 @@ type Terrestre struct {
 
 type Automovil struct {
 	Terrestre
-	color            string
-	llantas          int
-	velocidad_maxima int
+	color           string
+	llantas         int
+	velocidadMaxima int
 }
 
 func (this Transporte) mover() {
