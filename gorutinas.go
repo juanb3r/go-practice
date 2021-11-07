@@ -6,8 +6,11 @@ import (
 )
 
 func main() {
-	miNombreLentamente("Juan")
+	go miNombreLentamente("Juan")
 	fmt.Println("\nToca esperar es un poco de tiempo")
+	// usamos el scan para que nuestro codigo no se termine hasta que el usuario presione enter
+	var wait string
+	fmt.Scanln(&wait)
 }
 
 func miNombreLentamente(nombre string) {
