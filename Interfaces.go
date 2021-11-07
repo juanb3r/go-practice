@@ -50,10 +50,21 @@ func auth(user User) bool {
 
 func main() {
 	// admin := Admin{"Juanb3r"}
-	editor := Editor{"Peter Parker"}
-	if auth(editor) {
-		fmt.Println("El usuario tiene permisos")
-	} else {
-		fmt.Println("El usuario no tiene permisos")
+	// editor := Editor{"Peter Parker"}
+	userList := []User{
+		Editor{"Peter Parker"},
+		Admin{"Tony Stark"},
+		Editor{"Bruce Banner"},
+		Admin{"Steve Rogers"}}
+
+	// Usamos la funcion range para recorrer la lista de usuarios,
+	// este retorna una tupla con el indice y el valor del elemento
+
+	for _, user := range userList {
+		if auth(user) {
+			fmt.Printf("%s tiene permisos\n", user.obtenerNombre())
+		} else {
+			fmt.Printf("%s no tiene permisos\n", user.obtenerNombre())
+		}
 	}
 }
